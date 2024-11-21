@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
+import api from './../api';
 
 const HelloWorld = () => {
     const [message, setMessage] = useState("");
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/v1/hello")
-            .then((response) => response.text())
+
+        api.get('/hello')
+            .then((response) => response.data)
             .then((data) => setMessage(data))
             .catch((error) => console.error("Error fetching message:", error));
     }, []);
