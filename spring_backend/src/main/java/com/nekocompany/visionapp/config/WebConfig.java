@@ -10,7 +10,10 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:3000")
+                .allowedOrigins(
+                        "http://localhost:3000", // For development
+                        "https://visionapp-442323.web.app" // Deployed React app
+                )
                 .allowedMethods("*")
                 .allowedHeaders("*")
                 .allowCredentials(true); // Allows cookies if needed
