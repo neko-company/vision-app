@@ -1,4 +1,4 @@
 #!/bin/bash
 
 npm run build
-firebase deploy
+firebase deploy --only hosting
