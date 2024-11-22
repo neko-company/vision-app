@@ -14,7 +14,7 @@ const HelloWorld = () => {
 
     return (
         <div>
-            <h1>{message || "Loading..."}</h1>
+            {message || "Loading..."}
         </div>
     );
 };
