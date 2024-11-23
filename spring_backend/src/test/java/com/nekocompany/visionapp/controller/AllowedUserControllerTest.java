@@ -1,7 +1,7 @@
-package com.nekocompany.visionapp.service;
+package com.nekocompany.visionapp.controller;
 
-import com.nekocompany.visionapp.controller.AllowedUserController;
 import com.nekocompany.visionapp.model.AllowedUser;
+import com.nekocompany.visionapp.service.AllowedUserService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
