@@ -10,14 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/allowed-users")
+@RequestMapping("/api/v1/allowed-users")
 public class AllowedUserController {
 
     @Autowired
     private AllowedUserService allowedUserService;
 
     @GetMapping
-    public List<AllowedUser> getAllowedUsers() {
-        return allowedUserService.getAllAllowedUsers();
+    public List<String> getAllowedUsers() {
+        List<AllowedUser> allowedUsers = allowedUserService.getAllAllowedUsers();
+        return allowedUsers.stream().map(AllowedUser::getEmail).toList();
     }
 }

@@ -31,11 +31,11 @@ public class AllowedUserControllerTest {
                         new AllowedUser("mishmish@gmail.com")
                 ));
 
-        mockMvc.perform(get("/api/allowed-users"))
+        mockMvc.perform(get("/api/v1/allowed-users"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json"))
                 .andExpect(jsonPath("$.length()").value(2))
-                .andExpect(jsonPath("$[0].email").value("neko@gmail.com"))
-                .andExpect(jsonPath("$[1].email").value("mishmish@gmail.com"));
+                .andExpect(jsonPath("$[0]").value("neko@gmail.com"))
+                .andExpect(jsonPath("$[1]").value("mishmish@gmail.com"));
     }
 }
