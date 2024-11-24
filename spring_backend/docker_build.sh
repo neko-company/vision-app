@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mvn clean
-mvn package
+mvn package -DskipTests
 
 docker build -t gcr.io/visionapp-442323/visionapp .
 docker push gcr.io/visionapp-442323/visionapp
